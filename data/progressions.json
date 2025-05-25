@@ -1,0 +1,82 @@
+[
+	{
+		"progression": "I–vi–IV–V",
+		"description": "Doo-Wop"
+	},
+	{
+		"progression": "ii–V–I",
+		"description": "Jazz Turnaround"
+	},
+	{
+		"progression": "I–V–vi–IV",
+		"description": "Modern Pop"
+	},
+	{
+		"progression": "vi–IV–I–V",
+		"description": "Axis Variant"
+	},
+	{
+		"progression": "I–IV–V",
+		"description": "Rock Classic"
+	},
+	{
+		"progression": "i–bVII–bVI–V",
+		"description": "Phrygian Dominant"
+	},
+	{
+		"progression": "i–iv–v",
+		"description": "Dark Minor"
+	},
+	{
+		"progression": "I–iii–vi–IV",
+		"description": "80s Pop"
+	},
+	{
+		"progression": "IV–V–iii–vi",
+		"description": "Uplifting Flip"
+	},
+	{
+		"progression": "vi–I–V–IV",
+		"description": "R&B Soulful"
+	},
+	{
+		"progression": "Imaj7–vi7–ii7–V7",
+		"description": "Jazz Pop"
+	},
+	{
+		"progression": "ii7–V7–IMaj7",
+		"description": "Smooth Jazz"
+	},
+	{
+		"progression": "i–VI–III–VII",
+		"description": "Minor Epic"
+	},
+	{
+		"progression": "I–vi–ii–V",
+		"description": "Lo-fi Bounce"
+	},
+	{
+		"progression": "V7–I–IVmaj7–vi7",
+		"description": "Funky Neo Soul"
+	},
+	{
+		"progression": "bVII–IV–I",
+		"description": "Anthemic"
+	},
+	{
+		"progression": "I–bIII–IV–bVI",
+		"description": "Synthwave Power"
+	},
+	{
+		"progression": "Imaj9–IVmaj7",
+		"description": "R&B Loop"
+	},
+	{
+		"progression": "i–v–bVI–bIII",
+		"description": "Dark Trap"
+	},
+	{
+		"progression": "IV–I–V–vi",
+		"description": "Feel Good Jam"
+	}
+]
