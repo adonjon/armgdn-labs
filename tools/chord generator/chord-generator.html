@@ -1,55 +1,84 @@
+<!-- tools/chord-generator/chord-generator.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Chord Generator – ARMGDN Labs</title>
     <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/chord-generator.css" />
 </head>
 <body>
-    <header>
+    <!-- Theme panel -->
+    <div id="themePanel" class="theme-panel">
+        <label><input type="checkbox" id="themeToggle" /> Light Mode</label>
+        <label>Accent <input type="color" id="accentPicker" value="#3a82f6" /></label>
+        <label>Background <input type="color" id="bgPicker" value="#121212" /></label>
+        <label>
+            Font
+            <select id="fontSelect">
+                <option value="'Unbounded',sans-serif">Unbounded</option>
+                <option value="'Inter',sans-serif">Inter</option>
+            </select>
+        </label>
+    </div>
+
+    <header class="cg-header">
         <h1>🎹 Chord Generator</h1>
-        <div class="tools">
-            <a href="../../index.html" title="Back to Dashboard">🏠</a>
-            <button id="exportBtn" title="Export MIDI">💾 Export MIDI</button>
+        <div class="cg-tools">
+            <a href="../../index.html" class="cg-btn">🏠 Home</a>
+            <button id="advBtn" class="cg-btn">⚙️ Advanced</button>
         </div>
     </header>
 
-    <section class="controls">
-        <div><label>Mood</label><select id="mood"></select></div>
-        <div><label>Genre</label><select id="genre"></select></div>
-        <div><label>Scale</label><select id="scale"></select></div>
+    <!-- Always-visible controls -->
+    <section class="cg-controls">
         <div>
-            <label>Key</label><select id="key">
-                <option>C</option>
-                <option>G</option>
-                <option>D</option>
-                <option>A</option>
-                <option>E</option>
-                <option>B</option>
-                <option>F#</option>
-                <option>Db</option>
-                <option>Ab</option>
-                <option>Eb</option>
-                <option>Bb</option>
-                <option>F</option>
-            </select>
+            <label for="scale">Scale</label>
+            <select id="scale"></select>
         </div>
-        <div><label>Progression</label><select id="prog"></select></div>
         <div>
-            <label>Count: <span id="countLabel">4</span></label>
+            <label for="key">Key</label>
+            <select id="key"></select>
+        </div>
+        <div>
+            <label for="countSlider">Count: <span id="countLabel">4</span></label>
             <input type="range" id="countSlider" min="1" max="8" value="4" />
         </div>
     </section>
 
-    <div class="buttons">
+    <!-- Advanced options (hidden) -->
+    <section id="advPanel" class="cg-adv">
+        <div>
+            <label for="mood">Mood</label>
+            <select id="mood"></select>
+        </div>
+        <div>
+            <label for="genre">Genre</label>
+            <select id="genre"></select>
+        </div>
+        <div>
+            <label for="prog">Progression</label>
+            <select id="prog"></select>
+        </div>
+        <div>
+            <label for="chordType">Chord Type</label>
+            <select id="chordType"></select>
+        </div>
+        <div>
+            <label for="jazziness">Jazziness: <span id="jazzVal">0%</span></label>
+            <input type="range" id="jazziness" min="0" max="100" value="0" />
+        </div>
+    </section>
+
+    <div class="cg-buttons">
         <button id="generateBtn">Generate</button>
         <button id="resetBtn">Reset</button>
     </div>
 
-    <div id="chordStrip"></div>
+    <div id="chordStrip" class="cg-strip"></div>
 
-    <script src="../../lib/midi-export.js"></script>
+    <script src="../../lib/theme.js"></script>
     <script src="chord-generator.js"></script>
 </body>
 </html>
