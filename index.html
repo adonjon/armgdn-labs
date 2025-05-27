@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ARMGDN Labs</title>
-    <link rel="stylesheet" href="styles/main.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ARMGDN Labs Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#121212; --fg:#e0e0e0; --accent:#3a82f6; --font:'Unbounded',sans-serif; }
+    body.light { --bg:#fafafa; --fg:#202020; }
+    body { margin:0; font-family:var(--font); background:var(--bg); color:var(--fg); height:100vh; display:flex; flex-direction:column; }
+    header { height:60px; background:var(--bg); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; border-bottom:1px solid #333; }
+    header h1 { font-size:1.4rem; font-weight:600; }
+    nav a { color:var(--fg); margin-left:1rem; text-decoration:none; font-weight:500; }
+    main { flex:1; display:flex; }
+    .sidebar { width:200px; background:var(--bg); border-right:1px solid #333; padding:1rem; }
+    .sidebar a { display:flex; align-items:center; padding:0.5rem; color:var(--fg); text-decoration:none; border-radius:4px; }
+    .sidebar a:hover { background:rgba(255,255,255,0.05); }
+    .icon { margin-right:0.5rem; }
+    .content { flex:1; padding:2rem; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>ARMGDN Labs</h1>
-        <div class="toolbar">
-            <button id="themeBtn">🎨 Theme</button>
-        </div>
-    </header>
+  <header>
+    <h1>ARMGDN Labs</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="tools/chord-generator/chord-generator.html">Chord Generator</a>
+    </nav>
+  </header>
 
-    <main class="grid">
-        <a class="card" href="tools/chord-generator/chord-generator.html">
-            <div class="icon">🎹</div>
-            <div class="label">Chord Generator</div>
-            <div class="tag">Music</div>
-        </a>
-    </main>
-
-    <div id="themePanel" class="theme-panel">
-        <label><input type="checkbox" id="themeToggle" /> Light Mode</label>
-        <label>Accent <input type="color" id="accentPicker" value="#3a82f6" /></label>
-        <label>Background <input type="color" id="bgPicker" value="#121212" /></label>
-        <label>
-            Font
-            <select id="fontSelect">
-                <option value="'Unbounded',sans-serif">Unbounded</option>
-                <option value="'Inter',sans-serif">Inter</option>
-            </select>
-        </label>
-    </div>
-
-    <script>
-        const root = document.documentElement;
-        const panel = document.getElementById('themePanel');
-        document.getElementById('themeBtn').onclick = () => panel.classList.toggle('open');
-        document.getElementById('themeToggle').onchange = e => document.body.classList.toggle('light', e.target.checked);
-        document.getElementById('accentPicker').oninput = e => root.style.setProperty('--accent', e.target.value);
-        document.getElementById('bgPicker').oninput = e => root.style.setProperty('--bg', e.target.value);
-        document.getElementById('fontSelect').onchange = e => root.style.setProperty('--font', e.target.value);
-    </script>
+  <main>
+    <aside class="sidebar">
+      <a href="tools/chord-generator/chord-generator.html"><span class="icon">🎹</span>Chord Generator</a>
+      <!-- future tools… -->
+    </aside>
+    <section class="content">
+      <h2>Welcome to ARMGDN Labs</h2>
+      <p>Select a tool from the sidebar to begin.</p>
+    </section>
+  </main>
 </body>
 </html>
